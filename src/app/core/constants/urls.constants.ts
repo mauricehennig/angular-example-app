@@ -1,6 +1,7 @@
 import {
   AUTHENTICATION_PATHS,
   ERROR_PATHS,
+  LEAD_PATHS,
   POKEMON_PATHS,
   ROOT_PATHS,
   USER_PATHS,
@@ -22,6 +23,10 @@ export const POKEMON_URLS = {
 
 export const USER_URLS = {
   myPokemon: `/${USER_PATHS.base}/${USER_PATHS.myPokemon}`,
+};
+
+export const LEAD_URLS = {
+  capture: `/${LEAD_PATHS.base}/${LEAD_PATHS.capture}`,
 };
 
 export const ERROR_URLS = {

@@ -17,6 +17,11 @@ export const appRoutes: Route[] = [
     data: { preload: true },
   },
   {
+    path: 'hello',
+    redirectTo: ROOT_PATHS.home,
+    pathMatch: 'full',
+  },
+  {
     path: AUTHENTICATION_PATHS.base,
     loadChildren: async () =>
       import('./features/authentication/authentication.routes').then(

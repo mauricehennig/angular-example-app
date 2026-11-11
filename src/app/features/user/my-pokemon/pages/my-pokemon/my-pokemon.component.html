@@ -29,6 +29,7 @@
       </div>
     </div>
   } @else {
+    <p class="my-pokemon__count" i18n>You have caught {{ userPokemons().length }} Pokémon</p>
     <ul class="my-pokemon__grid">
       @for (pokemon of userPokemons(); track pokemon.id) {
         <li>

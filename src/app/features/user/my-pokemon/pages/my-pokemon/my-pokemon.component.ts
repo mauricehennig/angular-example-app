@@ -14,10 +14,12 @@ import { catchError, map, of, startWith, switchMap } from 'rxjs';
 import { PokemonCardComponent } from '~features/user/my-pokemon/components/pokemon-card/pokemon-card.component';
 import { translations } from '~locale/translations';
 import { PokemonSearchInputComponent } from '~shared/components/pokemon-search-input/pokemon-search-input.component';
+import { RouterLink } from '@angular/router';
+import { ROOT_URLS } from '~core/constants/urls.constants';
 
 @Component({
   selector: 'app-my-pokemon',
-  imports: [PokemonCardComponent, NgOptimizedImage, PokemonSearchInputComponent],
+  imports: [PokemonCardComponent, NgOptimizedImage, PokemonSearchInputComponent, RouterLink],
   templateUrl: './my-pokemon.component.html',
   styleUrl: './my-pokemon.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,6 +31,7 @@ export class MyPokemonComponent {
   private readonly alertService = inject(AlertService);
 
   readonly translations = translations;
+  readonly ROOT_URLS = ROOT_URLS;
   readonly loading = signal(true);
 
   readonly userPokemons = toSignal(

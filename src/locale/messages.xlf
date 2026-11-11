@@ -957,6 +957,20 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6926187623395995254" datatype="html">
+        <source>You have caught <x id="INTERPOLATION" equiv-text="{{ userPokemons().length }}"/> Pokémon</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/user/my-pokemon/pages/my-pokemon/my-pokemon.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6820092102654117735" datatype="html">
+        <source>Search and catch Pokémon on the home page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/user/my-pokemon/pages/my-pokemon/my-pokemon.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -15,6 +15,11 @@ $empty-image-width: 200px;
     margin-block-end: var(--spacing-r-5xl);
   }
 
+  .my-pokemon__count {
+    color: #29527a;
+    background-color: #f8fcff;
+  }
+
   .my-pokemon__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -38,6 +43,15 @@ $empty-image-width: 200px;
     .pokemons-empty__image {
       width: $empty-image-width;
       height: auto;
+    }
+
+    .pokemons-empty__link {
+      color: #0078dc;
+      text-decoration: underline;
+
+      &:active {
+        color: #29527a;
+      }
     }
   }
 }

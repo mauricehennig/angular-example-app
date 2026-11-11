@@ -16,6 +16,9 @@
           Uh-oh, it looks like you haven’t caught any Pokémon yet! Need help finding a pokemon? Try
           using the search bar to track them down. Gotta catch ‘em all!
         </p>
+        <a class="pokemons-empty__link" i18n [routerLink]="ROOT_URLS.home"
+          >Search and catch Pokémon on the home page</a
+        >
       </div>
       <div>
         <img
@@ -29,6 +32,7 @@
       </div>
     </div>
   } @else {
+    <p class="my-pokemon__count" i18n>You have caught {{ userPokemons().length }} Pokémon</p>
     <ul class="my-pokemon__grid">
       @for (pokemon of userPokemons(); track pokemon.id) {
         <li>

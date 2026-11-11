@@ -501,6 +501,14 @@
         <source>Toggle theme</source>
         <target state="new">Cambiar tema</target>
       </trans-unit>
+      <trans-unit id="6926187623395995254" datatype="html">
+        <source>You have caught <x id="INTERPOLATION" equiv-text="{{ userPokemons().length }}"/> Pokémon</source>
+        <target state="new">Has capturado <x id="INTERPOLATION" equiv-text="{{ userPokemons().length }}"/> Pokémon</target>
+      </trans-unit>
+      <trans-unit id="6820092102654117735" datatype="html">
+        <source>Search and catch Pokémon on the home page</source>
+        <target state="new">Busca y atrapa Pokémon en la página de inicio</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -1,6 +1,7 @@
 import type { ComponentFixture } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 import { of, Subject } from 'rxjs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { UserService } from '~features/authentication/services/user.service';
@@ -14,15 +15,18 @@ import { MyPokemonComponent } from './my-pokemon.component';
 describe('MyPokemonComponent', () => {
   let fixture: ComponentFixture<MyPokemonComponent>;
   let pokemons: Subject<Pokemon[]>;
+  let caughtPokemonIds: number[];
 
   beforeEach(async () => {
     pokemons = new Subject<Pokemon[]>();
+    caughtPokemonIds = [1, 2, 3];
 
     await TestBed.configureTestingModule({
       imports: [MyPokemonComponent],
       providers: [
         provideZonelessChangeDetection(),
-        { provide: UserService, useValue: { getMe: () => of({ caughtPokemonIds: [1, 2, 3] }) } },
+        provideRouter([]),
+        { provide: UserService, useValue: { getMe: () => of({ caughtPokemonIds }) } },
         { provide: PokemonService, useValue: { getPokemonByIds: () => pokemons } },
         { provide: AlertService, useValue: { createErrorAlert: vi.fn() } },
       ],
@@ -56,16 +60,25 @@ describe('MyPokemonComponent', () => {
     expect(summary?.textContent).toBe(`You have caught ${count} Pokémon`);
     expect(summary?.nextElementSibling?.classList.contains('my-pokemon__grid')).toBe(true);
     expect(element.querySelectorAll('app-pokemon-card')).toHaveLength(count);
+    expect(element.querySelector('.pokemons-empty__container')).toBeNull();
+    expect(element.querySelector('.pokemons-empty__link')).toBeNull();
   });
 
-  it('should keep the empty state without a count when no pokemon have been caught', async () => {
-    pokemons.next([]);
+  it('should explain how to catch pokemon with a home link when none have been caught', async () => {
+    caughtPokemonIds = [];
+    fixture.destroy();
+    fixture = TestBed.createComponent(MyPokemonComponent);
+    fixture.autoDetectChanges();
     await fixture.whenStable();
 
     const element: HTMLElement = fixture.nativeElement;
+    const emptyState = element.querySelector('.pokemons-empty__container');
+    const link = emptyState?.querySelector('a');
 
     expect(element.querySelector('.my-pokemon__count')).toBeNull();
-    expect(element.querySelector('.pokemons-empty__container')).not.toBeNull();
+    expect(emptyState?.textContent).toContain('you haven’t caught any Pokémon yet!');
+    expect(link?.textContent).toBe('Search and catch Pokémon on the home page');
+    expect(link?.getAttribute('href')).toBe('/');
     expect(element.querySelector('app-pokemon-card')).toBeNull();
   });
 });

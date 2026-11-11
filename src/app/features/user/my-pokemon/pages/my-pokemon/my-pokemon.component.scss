@@ -44,5 +44,14 @@ $empty-image-width: 200px;
       width: $empty-image-width;
       height: auto;
     }
+
+    .pokemons-empty__link {
+      color: #0078dc;
+      text-decoration: underline;
+
+      &:active {
+        color: #29527a;
+      }
+    }
   }
 }

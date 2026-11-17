@@ -317,13 +317,13 @@
         <source>N.º: <x id="INTERPOLATION" equiv-text="{{ pokemon()?.order }}"/></source>
         <target state="new">N.º: <x id="INTERPOLATION" equiv-text="{{ pokemon()?.order }}"/></target>
       </trans-unit>
-      <trans-unit id="5157210307460756815" datatype="html">
-        <source>Height: <x id="INTERPOLATION" equiv-text="{{ pokemon()?.height }}"/> dm</source>
-        <target state="new">Altura: <x id="INTERPOLATION" equiv-text="{{pokemon()?.height}}"/> dm</target>
+      <trans-unit id="1459359475973166019" datatype="html">
+        <source>Height: <x id="INTERPOLATION" equiv-text="{{ +(pokemon()?.height ?? 0) / 10 }}"/> m</source>
+        <target state="new">Altura: <x id="INTERPOLATION" equiv-text="{{ +(pokemon()?.height ?? 0) / 10 }}"/> m</target>
       </trans-unit>
-      <trans-unit id="1651947138133669" datatype="html">
-        <source>Weight: <x id="INTERPOLATION" equiv-text="{{ pokemon()?.weight }}"/> hg</source>
-        <target state="new">Peso: <x id="INTERPOLATION" equiv-text="{{pokemon()?.weight}}"/> hg</target>
+      <trans-unit id="5856116157519898981" datatype="html">
+        <source>Weight: <x id="INTERPOLATION" equiv-text="{{ +(pokemon()?.weight ?? 0) / 10 }}"/> kg</source>
+        <target state="new">Peso: <x id="INTERPOLATION" equiv-text="{{ +(pokemon()?.weight ?? 0) / 10 }}"/> kg</target>
       </trans-unit>
       <trans-unit id="4377004748613683272" datatype="html">
         <source>Pokeball</source>

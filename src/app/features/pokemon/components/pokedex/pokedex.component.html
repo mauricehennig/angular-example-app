@@ -16,8 +16,8 @@
             @if (pokemon()) {
               <p class="pokemon__name-text">{{ pokemon()?.name | firstTitleCase }}</p>
               <p i18n>N.º: {{ pokemon()?.order }}</p>
-              <p i18n>Height: {{ pokemon()?.height }} dm</p>
-              <p i18n>Weight: {{ pokemon()?.weight }} hg</p>
+              <p i18n>Height: {{ +(pokemon()?.height ?? 0) / 10 }} m</p>
+              <p i18n>Weight: {{ +(pokemon()?.weight ?? 0) / 10 }} kg</p>
             }
           </div>
         </div>

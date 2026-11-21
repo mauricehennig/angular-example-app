@@ -108,7 +108,7 @@ export class RegisterComponent implements OnInit {
     this.authService
       .register({
         ...formValue,
-        age: age === '' ? undefined : Number(age),
+        age: Number(age),
         favouritePokemonId: this.pokemonValidator.pokemonId() satisfies number,
       } as RegisterFormValue)
       .pipe(
@@ -131,7 +131,7 @@ export class RegisterComponent implements OnInit {
         nonNullable: true,
       }),
       age: new FormControl<string>('', {
-        validators: [Validators.min(0), Validators.pattern(/^\d+$/u)],
+        validators: [Validators.required, Validators.min(0), Validators.pattern(/^\d+$/u)],
         nonNullable: true,
       }),
       email: new FormControl<string>('', {

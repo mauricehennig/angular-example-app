@@ -964,7 +964,7 @@
         <source>Enter your age</source>
       </trans-unit>
       <trans-unit id="registerAgeHelpText" datatype="html">
-        <source>Optional. Enter your age in whole years (0 or more).</source>
+        <source>Field required. Enter your age in whole years (0 or more).</source>
       </trans-unit>
     </body>
   </file>

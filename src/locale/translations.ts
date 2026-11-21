@@ -8,7 +8,7 @@ export const translations = {
   myPokemon: $localize`My pokemon`,
   logOut: $localize`Log out`,
   fieldRequired: $localize`Field required.`,
-  ageHelpText: $localize`:@@registerAgeHelpText:Optional. Enter your age in whole years (0 or more).`,
+  ageHelpText: $localize`:@@registerAgeHelpText:Field required. Enter your age in whole years (0 or more).`,
   emailHelpText: $localize`Field required. No real email validation. Format: example@domain.com`,
   passwordHelpText: $localize`Must contain at least one lowercase letter, one uppercase letter and one number. No special characters.`,
   confirmPasswordHelpText: $localize`Passwords do not match.`,

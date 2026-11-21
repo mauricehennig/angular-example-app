@@ -13,7 +13,7 @@ export type RegisterFormGroup = FormGroup<{
 
 export type RegisterFormValue = {
   name: string;
-  age?: number;
+  age: number;
   email: string;
   password: string;
   confirmPassword: string;

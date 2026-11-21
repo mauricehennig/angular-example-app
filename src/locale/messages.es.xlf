@@ -510,8 +510,8 @@
         <target state="translated">Introduce tu edad</target>
       </trans-unit>
       <trans-unit id="registerAgeHelpText" datatype="html">
-        <source>Optional. Enter your age in whole years (0 or more).</source>
-        <target state="translated">Opcional. Introduce tu edad en años enteros (0 o más).</target>
+        <source>Field required. Enter your age in whole years (0 or more).</source>
+        <target state="translated">Campo obligatorio. Introduce tu edad en años enteros (0 o más).</target>
       </trans-unit>
     </body>
   </file>

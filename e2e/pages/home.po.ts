@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   async expectLoaded() {
-    await expect(this.title).toContainText('Angular Example App');
+    await expect(this.title).toContainText('Voven Live Demo');
   }
 
   async expectNavigationToLogin() {

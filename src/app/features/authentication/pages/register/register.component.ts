@@ -67,6 +67,7 @@ export class RegisterComponent implements OnInit {
   readonly registerForm = this.createRegisterForm();
   readonly formControls = {
     name: this.registerForm.get('name') as FormControl<string>,
+    age: this.registerForm.get('age') as FormControl<string>,
     email: this.registerForm.get('email') as FormControl<string>,
     password: this.registerForm.get('password') as FormControl<string>,
     confirmPassword: this.registerForm.get('confirmPassword') as FormControl<string>,
@@ -102,11 +103,12 @@ export class RegisterComponent implements OnInit {
     this.updateFormState({ isLoading: true });
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { confirmPassword, ...formValue } = this.registerForm.getRawValue();
+    const { confirmPassword, age, ...formValue } = this.registerForm.getRawValue();
 
     this.authService
       .register({
         ...formValue,
+        age: age === '' ? undefined : Number(age),
         favouritePokemonId: this.pokemonValidator.pokemonId() satisfies number,
       } as RegisterFormValue)
       .pipe(
@@ -126,6 +128,10 @@ export class RegisterComponent implements OnInit {
     return this.formBuilder.group({
       name: new FormControl<string>('', {
         validators: [Validators.required, Validators.minLength(2)],
+        nonNullable: true,
+      }),
+      age: new FormControl<string>('', {
+        validators: [Validators.min(0), Validators.pattern(/^\d+$/u)],
         nonNullable: true,
       }),
       email: new FormControl<string>('', {

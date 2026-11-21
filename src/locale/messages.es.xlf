@@ -501,6 +501,18 @@
         <source>Toggle theme</source>
         <target state="new">Cambiar tema</target>
       </trans-unit>
+      <trans-unit id="registerAgeLabel" datatype="html">
+        <source>Age</source>
+        <target state="translated">Edad</target>
+      </trans-unit>
+      <trans-unit id="registerAgePlaceholder" datatype="html">
+        <source>Enter your age</source>
+        <target state="translated">Introduce tu edad</target>
+      </trans-unit>
+      <trans-unit id="registerAgeHelpText" datatype="html">
+        <source>Optional. Enter your age in whole years (0 or more).</source>
+        <target state="translated">Opcional. Introduce tu edad en años enteros (0 o más).</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

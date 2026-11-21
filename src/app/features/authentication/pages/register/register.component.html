@@ -32,6 +32,25 @@
     <div class="form-control__container">
       <sl-input
         class="input--primary"
+        type="number"
+        placeholder="Enter your age"
+        label="Age"
+        min="0"
+        step="1"
+        size="medium"
+        i18n-label="@@registerAgeLabel"
+        i18n-placeholder="@@registerAgePlaceholder"
+        appSlInputIconFocus
+        ngDefaultControl
+        [attr.help-text]="translations.ageHelpText"
+        [formControl]="formControls.age"
+      >
+        <sl-icon name="calendar" slot="prefix" />
+      </sl-input>
+    </div>
+    <div class="form-control__container">
+      <sl-input
+        class="input--primary"
         placeholder="Enter your email"
         label="Email"
         size="medium"

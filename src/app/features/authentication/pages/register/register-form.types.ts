@@ -3,6 +3,7 @@ import type { WritableSignal } from '@angular/core';
 
 export type RegisterFormGroup = FormGroup<{
   name: FormControl<string>;
+  age: FormControl<string>;
   email: FormControl<string>;
   password: FormControl<string>;
   confirmPassword: FormControl<string>;
@@ -12,6 +13,7 @@ export type RegisterFormGroup = FormGroup<{
 
 export type RegisterFormValue = {
   name: string;
+  age: number;
   email: string;
   password: string;
   confirmPassword: string;
